@@ -7,7 +7,8 @@ import {
 import { QuestsCatalog } from './components/components';
 import * as S from './home.styled';
 
-const HomePage = () => (
+const Home = () => {
+  return (
   <MainLayout>
     <S.Main forwardedAs="main">
       <PageHeading>
@@ -17,6 +18,6 @@ const HomePage = () => (
       <QuestsCatalog />
     </S.Main>
   </MainLayout>
-);
+)}
 
-export default HomePage;
+export default Home;

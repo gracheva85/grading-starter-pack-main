@@ -9,6 +9,7 @@ import Contacts from 'components/contacts/contacts';
 import Home from 'components/home/home';
 import { appTheme } from './common';
 import * as S from './app.styled';
+import Error from 'components/error/error';
 
 const App = () => (
   <ThemeProvider theme={appTheme}>
@@ -21,8 +22,11 @@ const App = () => (
         <Route exact path="/contacts">
           <Contacts />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <Home />
+        </Route>
+        <Route >
+          <Error />
         </Route>
       </Switch>
     </Router>

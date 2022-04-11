@@ -1,7 +1,8 @@
-import { MainLayout, PageTitle, PageSubtext } from 'components/common/common';
-import * as S from './contacts.styled';
+import { MainLayout, PageTitle, PageSubtext, Link } from 'components/common/common';
+import * as S from './error.styled';
 
-const Error = () => (
+const Error = () => {
+  return (
   <MainLayout>
     <S.Main>
       <S.ContentWrapper>
@@ -9,14 +10,12 @@ const Error = () => (
           <PageTitle>404</PageTitle>
           <PageSubtext>Not Found</PageSubtext>
         </S.PageHeading>
-        <S.Contacts>
-          <S.ContactsList>
-            <S.Link $isActiveLink to="/"> Квесты </S.Link>
-          </S.ContactsList>
-        </S.Contacts>
+        <S.Container>
+          <Link to="/"> Перейти на главную страницу </Link>
+        </S.Container>
       </S.ContentWrapper>
     </S.Main>
   </MainLayout>
-);
+)}
 
 export default Error;
