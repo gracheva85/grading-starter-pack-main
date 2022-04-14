@@ -1,9 +1,9 @@
 import L from 'leaflet';
-// import leaflet from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-// import 'leaflet/dist/leaflet';
-// import 'leaflet/dist/leaflet.js';
-import {useEffect} from 'react';
+import * as S from './map.styled';
+
+
+import {useEffect, useRef} from 'react';
 import iconLocation from 'assets/img/icon-location.png';
 
 const MAP_SIZE = 16;
@@ -24,9 +24,11 @@ const MarkerDetails = {
 };
 
 const Map = () => {
+  const mapRef = useRef(null);
 
   useEffect(() => {
-    const map = L.map('map', { zoomControl: false }).setView({
+    if (mapRef && mapRef.current) {
+    const map = L.map(mapRef.current, { zoomControl: false }).setView({
       lat: Location.LAT,
       lng: Location.LNG,
     }, MAP_SIZE,
@@ -57,21 +59,15 @@ const Map = () => {
     );
 
     pinMarker.addTo(map);
-  });
+    }
+  }, [mapRef]);
 
   return (
-    <>
-
-      <div
-        id="map"
-        style={{
-          height: '336px',
-          width: '649px',
-        }}
-      >
-      </div>
-    </>
+    <S.MapWrapper ref={mapRef}>
+    </S.MapWrapper>
   );
 }
 
 export default Map;
+
+
