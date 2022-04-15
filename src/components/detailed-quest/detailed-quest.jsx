@@ -13,7 +13,7 @@ import { useParams } from 'react-router-dom';
 import { fetchQuestAction } from 'store/api-actions.js';
 import Error from 'components/error/error';
 import {store} from '../../store/index'
-import LoadingScreen from './loading-screen/loading-screen';
+import LoadingScreen from './components/loading-screen/loading-screen';
 
 const translateType = (type) => {
   switch (type) {
@@ -43,9 +43,6 @@ const DetailedQuest = () => {
   useEffect(()=>{
     store.dispatch(fetchQuestAction(id));
   }, [id]);
-
-  console.log('isLoaded', isLoaded);
-  console.log('quest', quest);
 
   if (isLoaded===Status.IsNotloaded) {
     return <Error />;

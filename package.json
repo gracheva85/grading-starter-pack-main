@@ -37,8 +37,6 @@
     "eslint": "eslint --ext .jsx --ext .js src/",
     "test": "jest"
   },
-  "presets": ["@babel/preset-react"],
-  "plugins": ["@babel/plugin-syntax-jsx"],
   "eslintConfig": {
     "extends": [
       "react-app"

@@ -18,18 +18,6 @@ const APIRoute = {
   Orders: '/orders',
 };
 
-const TranslatedLevel = {
-  Hard: 'сложный',
-  Medium: 'средний',
-  Easy: 'простой',
-};
-
-const  IncomingLevel = {
-  Hard: 'hard',
-  Medium: 'medium',
-  Easy: 'easy',
-};
-
 const Levels = {
   HARD: {
     name: 'сложный',
@@ -116,8 +104,6 @@ export {
   NameSpace,
   AppRoute,
   APIRoute,
-  IncomingLevel,
-  TranslatedLevel,
   Levels,
   Types,
   Menu,
