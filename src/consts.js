@@ -1,7 +1,7 @@
 const NameSpace = {
   Data: 'Data',
   User: 'User',
-}
+};
 
 const AppRoute = {
   Root: '/',
@@ -11,12 +11,12 @@ const AppRoute = {
   Reviews: '/reviews',
   Stocks: '/stocks',
   Error: '/404',
-}
+};
 
 const APIRoute = {
   Quests: '/quests',
   Orders: '/orders',
-}
+};
 
 const TranslatedLevel = {
   Hard: 'сложный',
@@ -28,14 +28,21 @@ const  IncomingLevel = {
   Hard: 'hard',
   Medium: 'medium',
   Easy: 'easy',
-}
+};
 
-const  IncomingType = {
-  Adventures: 'adventures',
-  Horror: 'horror',
-  Mystic: 'mystic',
-  Detective: 'detective',
-  SciFi: 'sci-fi'
+const Levels = {
+  HARD: {
+    name: 'сложный',
+    level: 'hard',
+  },
+  MEDIUM: {
+    name: 'средний',
+    level: 'medium',
+  },
+  EASY: {
+    name: 'простой',
+    level: 'easy',
+  },
 }
 
 const Types = {
@@ -105,4 +112,15 @@ const Status = {
   IsNotloaded: 'IsNotloaded',
 }
 
-export {NameSpace, AppRoute, APIRoute, IncomingLevel, TranslatedLevel, IncomingType, Types, Menu, Contact, Status};
+export {
+  NameSpace,
+  AppRoute,
+  APIRoute,
+  IncomingLevel,
+  TranslatedLevel,
+  Levels,
+  Types,
+  Menu,
+  Contact,
+  Status
+};

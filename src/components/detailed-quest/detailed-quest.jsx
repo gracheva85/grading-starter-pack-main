@@ -5,34 +5,27 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal} from './components/components';
-import {useAppSelector} from '../../hooks/index';
+import { useAppSelector } from '../../hooks/index';
 import { translateLevel } from 'common';
-import { getLoadedStatus, loadQuest, loadQuests } from 'store/quest-data/selectors';
-import { IncomingType, Status } from 'consts';
+import { getLoadedStatus, loadQuest } from 'store/quest-data/selectors';
+import { Status, Types } from 'consts';
 import { useParams } from 'react-router-dom';
 import { fetchQuestAction } from 'store/api-actions.js';
 import Error from 'components/error/error';
 import {store} from '../../store/index'
 import LoadingScreen from './loading-screen/loading-screen';
 
-const TranslatedType = {
-  Adventures: 'Приключения',
-  Horror: 'Ужасы',
-  Mystic: 'Мистика',
-  Detective: 'Детектив',
-};
-
 const translateType = (type) => {
   switch (type) {
-    case IncomingType.Adventures:
-      return TranslatedType.Adventures;
-    case IncomingType.Horror:
-      return TranslatedType.Horror;
-    case IncomingType.Mystic:
-      return TranslatedType.Mystic;
-    case IncomingType.Detective:
-      return TranslatedType.Detective;
-    default: return type;
+    case Types.ADVENTURES.type:
+      return Types.ADVENTURES.name.toLowerCase();
+    case Types.HORROR.type:
+      return Types.HORROR.name.toLowerCase();
+    case Types.MYSTIC.type:
+      return Types.MYSTIC.name.toLowerCase();
+    case Types.DETECTIVE.type:
+      return Types.DETECTIVE.name.toLowerCase();
+    default: return Types.SCI_FI.name.toLowerCase();
   }
 };
 
@@ -45,9 +38,7 @@ const DetailedQuest = () => {
     setIsBookingModalOpened(true);
   };
 
-  const quests = useAppSelector(loadQuests);
   const quest = useAppSelector(loadQuest);
-  const currentQuest = quests.find(item => item.id === Number(id));
 
   useEffect(()=>{
     store.dispatch(fetchQuestAction(id));
@@ -103,7 +94,7 @@ const DetailedQuest = () => {
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal onCloseBtnClick={setIsBookingModalOpened} peopleCount={currentQuest.peopleCount} />}
+        {isBookingModalOpened && <BookingModal onCloseBtnClick={setIsBookingModalOpened} peopleCount={quest.peopleCount} />}
       </S.Main>
     </MainLayout>
   )};

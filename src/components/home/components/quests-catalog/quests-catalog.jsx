@@ -6,14 +6,13 @@ import { ReactComponent as IconDetective } from 'assets/img/icon-detective.svg';
 import { ReactComponent as IconScifi } from 'assets/img/icon-scifi.svg';
 import * as S from './quests-catalog.styled';
 import {useAppSelector} from '../../../../hooks/index';
-import { loadQuests } from 'store/quest-data/selectors';
+import { getAdventuresQuests, getDetectiveQuests, getHorrorQuests, getMysticQuests, getSciFiQuests, loadQuests } from 'store/quest-data/selectors';
 import Quest from '../quest/quest';
 import { v4 as uuidv4 } from 'uuid';
 import { Types } from 'consts';
 import { getType } from 'store/user-process/selectors';
 import { setType } from 'store/user-process/user-process';
 import {store} from '../../../../store/index'
-import { filterQuests } from 'common';
 
 const renderIcon = (type) => {
   switch (type) {
@@ -32,13 +31,27 @@ const renderIcon = (type) => {
   }
 };
 
+const filterQuests = (quests, type) => {
+  switch (type) {
+    case Types.ADVENTURES.type:
+      return getAdventuresQuests(store.getState());
+    case Types.DETECTIVE.type:
+      return getDetectiveQuests(store.getState());
+    case Types.HORROR.type:
+      return getHorrorQuests(store.getState());
+    case Types.MYSTIC.type:
+      return getMysticQuests(store.getState());
+    case Types.SCI_FI.type:
+      return getSciFiQuests(store.getState());
+    default:
+      return quests;
+  }
+};
+
 const QuestsCatalog = () => {
   const currentType = useAppSelector(getType);
   const quests = useAppSelector(loadQuests);
-
-  const handleTypeClick = (type) => {
-    store.dispatch(setType(type));
-  };
+  const handleTypeClick = (type) => {store.dispatch(setType(type))};
 
   return (
     <>
