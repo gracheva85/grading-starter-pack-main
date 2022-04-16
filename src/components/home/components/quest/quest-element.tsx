@@ -1,16 +1,16 @@
-import * as S from './quests.styled';
+import * as S from './quest.styled';
 import {generatePath} from 'react-router-dom';
 import { ReactComponent as IconPerson } from '../../../../assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from '../../../../assets/img/icon-puzzle.svg';
 import { translateLevel } from '../../../../common';
 import { AppRoute } from '../../../../consts';
-import { QuestType } from '../../../../types/quest-type';
+import { Quest } from '../../../../types/quest';
 
 type QuestProps = {
-  quest: QuestType;
+  quest: Quest;
 }
 
-const Quest = ({quest}: QuestProps): JSX.Element => {
+const QuestElement = ({quest}: QuestProps): JSX.Element => {
 
   return (
     <S.QuestItem >
@@ -42,4 +42,4 @@ const Quest = ({quest}: QuestProps): JSX.Element => {
       </S.QuestItem>
 )};
 
-export default Quest;
+export default QuestElement;

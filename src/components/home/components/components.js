@@ -1,2 +1,2 @@
 export { default as QuestsCatalog } from './quests-catalog/quests-catalog';
-export { default as Quest } from './quest/quest';
+export { default as QuestElement } from './quest/quest-element';

@@ -6,7 +6,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast, ToastOptions } from 'react-toastify';
 import { AppDispatch, State } from '../types/state';
 import { AxiosInstance } from 'axios';
-import { QuestType } from '../types/quest-type';
+import { Quest } from '../types/quest';
 import { Order } from '../types/order';
 
 const MESSAGE = {
@@ -31,7 +31,7 @@ const fetchQuestsAction = createAsyncThunk<void, undefined, {
   ApiActionType.FetchQuests,
   async (_arg, {dispatch, extra: api}) => {
       try {
-        const {data} = await api.get<QuestType[]>(APIRoute.Quests);
+        const {data} = await api.get<Quest[]>(APIRoute.Quests);
         dispatch(getQuests(data));
       } catch (error) {
         errorHandle(error);
@@ -45,7 +45,7 @@ const fetchQuestAction = createAsyncThunk<void, number, {
   ApiActionType.FetchQuest,
     async (id: number, {dispatch, extra: api}) => {
       try {
-        const {data} = await api.get<QuestType>(`${APIRoute.Quests}/${id}`);
+        const {data} = await api.get<Quest>(`${APIRoute.Quests}/${id}`);
         dispatch(getQuest(data));
       } catch (error) {
         dispatch(setStatus(Status.IsNotloaded));

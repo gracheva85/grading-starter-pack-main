@@ -3,11 +3,11 @@ import {
   NameSpace,
   Types
 } from '../../consts';
-import { QuestType } from '../../types/quest-type';
+import { Quest } from '../../types/quest';
 import { State } from '../../types/state';
 
-const loadQuests = (state: State): QuestType[] => state[NameSpace.Data].quests;
-const loadQuest = (state: State): QuestType => state[NameSpace.Data].quest;
+const loadQuests = (state: State): Quest[] => state[NameSpace.Data].quests;
+const loadQuest = (state: State): Quest => state[NameSpace.Data].quest;
 const getLoadedStatus = (state: State): string => state[NameSpace.Data].isLoaded;
 
 const getAdventuresQuests = createSelector(

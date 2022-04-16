@@ -1,6 +1,5 @@
 import {store} from '../store/index';
-
-import { QuestType } from "./quest-type";
+import {Quest} from "./quest";
 
 type UserProcess = {
   order: Record<string, never>,
@@ -9,8 +8,8 @@ type UserProcess = {
 };
 
 type QuestData = {
-  quests: QuestType[],
-  quest: QuestType,
+  quests: Quest[],
+  quest: Quest,
   isLoaded: string,
 };
 

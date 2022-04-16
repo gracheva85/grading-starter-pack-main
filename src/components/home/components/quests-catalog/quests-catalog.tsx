@@ -13,13 +13,13 @@ import {getAdventuresQuests,
   getSciFiQuests,
   loadQuests
 } from '../../../../store/quest-data/selectors';
-import Quest from '../quest/quest';
+import QuestElement from '../quest/quest-element';
 import { v4 as uuidv4 } from 'uuid';
 import { Types } from '../../../../consts';
 import { getType } from '../../../../store/user-process/selectors';
 import { setType } from '../../../../store/user-process/user-process';
 import {store} from '../../../../store/index'
-import { QuestType } from '../../../../types/quest-type';
+import { Quest } from '../../../../types/quest';
 import styled, { css } from 'styled-components';
 
 const ActiveLink = styled(S.TabBtn)<{$isActive: boolean}>`
@@ -47,7 +47,7 @@ const renderIcon = (type: string) => {
   }
 };
 
-const filterQuests = (quests: QuestType[], type: string) => {
+const filterQuests = (quests: Quest[], type: string) => {
   switch (type) {
     case Types.ADVENTURES.type:
       return getAdventuresQuests(store.getState());
@@ -66,7 +66,7 @@ const filterQuests = (quests: QuestType[], type: string) => {
 
 const QuestsCatalog = (): JSX.Element => {
   const currentType = useAppSelector(getType);
-  const quests: QuestType[] = useAppSelector(loadQuests);
+  const quests: Quest[] = useAppSelector(loadQuests);
   const handleTypeClick = (type: string) => {store.dispatch(setType(type))};
 
   return (
@@ -89,7 +89,7 @@ const QuestsCatalog = (): JSX.Element => {
     </S.Tabs>
 
     <S.QuestsList>
-      {filterQuests(quests, currentType).map((quest: QuestType) => <Quest key={uuidv4()} quest={quest} />)}
+      {filterQuests(quests, currentType).map((quest: Quest) => <QuestElement key={uuidv4()} quest={quest} />)}
     </S.QuestsList>
 </>
 )}
