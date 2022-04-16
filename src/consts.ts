@@ -1,6 +1,6 @@
-const NameSpace = {
-  Data: 'Data',
-  User: 'User',
+const enum NameSpace {
+  Data = 'Data',
+  User = 'User',
 };
 
 const AppRoute = {
@@ -100,6 +100,18 @@ const Status = {
   IsNotloaded: 'IsNotloaded',
 }
 
+const defaultQuest = {
+  id: 0,
+  title: '',
+  description: '',
+  previewImg: '',
+  coverImg: '',
+  type: '',
+  level: '',
+  peopleCount: [],
+  duration: 0
+}
+
 export {
   NameSpace,
   AppRoute,
@@ -108,5 +120,6 @@ export {
   Types,
   Menu,
   Contact,
-  Status
+  Status,
+  defaultQuest
 };

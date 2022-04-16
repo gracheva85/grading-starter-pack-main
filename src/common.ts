@@ -1,6 +1,6 @@
-const { Levels } = require("consts");
+import { Levels } from "./consts";
 
-const translateLevel = (type) => {
+const translateLevel = (type: string) => {
   switch (type) {
     case Levels.EASY.level:
       return Levels.EASY.name;

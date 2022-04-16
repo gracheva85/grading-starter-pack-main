@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react';
-import { MainLayout } from 'components/common/common';
-import { ReactComponent as IconClock } from 'assets/img/icon-clock.svg';
-import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
-import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
+import { MainLayout } from '../common/common';
+import { ReactComponent as IconClock } from '../../assets/img/icon-clock.svg';
+import { ReactComponent as IconPerson } from '../../assets/img/icon-person.svg';
+import { ReactComponent as IconPuzzle } from '../../assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
-import { BookingModal} from './components/components';
+import BookingModal from './components/booking-modal/booking-modal';
 import { useAppSelector } from '../../hooks/index';
-import { translateLevel } from 'common';
-import { getLoadedStatus, loadQuest } from 'store/quest-data/selectors';
-import { Status, Types } from 'consts';
+import { translateLevel } from '../../common';
+import { getLoadedStatus, loadQuest } from '../../store/quest-data/selectors';
+import { Status, Types } from '../../consts';
 import { useParams } from 'react-router-dom';
-import { fetchQuestAction } from 'store/api-actions.js';
-import Error from 'components/error/error';
+import { fetchQuestAction } from '../../store/api-actions';
+import Error from '../error/error';
 import {store} from '../../store/index'
 import LoadingScreen from './components/loading-screen/loading-screen';
 
-const translateType = (type) => {
+const translateType = (type: string) => {
   switch (type) {
     case Types.ADVENTURES.type:
       return Types.ADVENTURES.name.toLowerCase();
@@ -29,8 +29,8 @@ const translateType = (type) => {
   }
 };
 
-const DetailedQuest = () => {
-  const {id} = useParams();
+const DetailedQuest = (): JSX.Element => {
+  const id =  Number(useParams<{id: string}>().id);
   const isLoaded = useAppSelector(getLoadedStatus);
 
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
@@ -91,7 +91,7 @@ const DetailedQuest = () => {
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal onCloseBtnClick={setIsBookingModalOpened} peopleCount={quest.peopleCount} />}
+        {isBookingModalOpened && <BookingModal onCloseBtnClick={setIsBookingModalOpened} peopleCounts={quest.peopleCount} />}
       </S.Main>
     </MainLayout>
   )};

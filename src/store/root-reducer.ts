@@ -1,4 +1,4 @@
-import {combineReducers} from '@reduxjs/toolkit';
+import { combineReducers } from '@reduxjs/toolkit';
 import {NameSpace} from '../consts';
 import {questData} from './quest-data/quest-data';
 import {userProcess} from './user-process/user-process';

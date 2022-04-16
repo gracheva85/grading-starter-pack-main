@@ -1,9 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {NameSpace, Status} from '../../consts';
+import {defaultQuest, NameSpace, Status} from '../../consts';
+import { QuestData } from '../../types/state';
 
-const initialState = {
+const initialState: QuestData = {
   quests: [],
-  quest: {},
+  quest: defaultQuest,
   isLoaded: Status.Unknown,
 };
 

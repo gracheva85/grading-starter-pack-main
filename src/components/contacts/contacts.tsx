@@ -1,9 +1,9 @@
-import { MainLayout, PageTitle, PageSubtext } from 'components/common/common';
-import { Contact } from 'consts.js';
-import Map from './components/map/map.jsx';
+import { MainLayout, PageTitle, PageSubtext } from '../common/common';
+import { Contact } from '../../consts';
+import Map from './components/map/map';
 import * as S from './contacts.styled';
 
-const Contacts = () => (
+const Contacts = (): JSX.Element => (
   <MainLayout>
     <S.Main>
       <S.ContentWrapper>

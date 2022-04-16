@@ -1,13 +1,14 @@
 import request from 'axios';
-import {toast} from 'react-toastify';
+import {toast, ToastOptions} from 'react-toastify';
+import { ErrorType } from '../types/error';
 
 const BAD_REQUEST = 400;
 
-const theme = {
+const theme: ToastOptions<{}> = {
   theme: "dark"
 };
 
-export const errorHandle = (error) => {
+export const errorHandle = (error: ErrorType): void => {
   if (!request.isAxiosError(error)) {
     throw error;
   }

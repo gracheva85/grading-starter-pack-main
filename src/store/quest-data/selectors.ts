@@ -3,10 +3,12 @@ import {
   NameSpace,
   Types
 } from '../../consts';
+import { QuestType } from '../../types/quest-type';
+import { State } from '../../types/state';
 
-const loadQuests = (state) => state[NameSpace.Data].quests;
-const loadQuest = (state) => state[NameSpace.Data].quest;
-const getLoadedStatus = (state) => state[NameSpace.Data].isLoaded;
+const loadQuests = (state: State): QuestType[] => state[NameSpace.Data].quests;
+const loadQuest = (state: State): QuestType => state[NameSpace.Data].quest;
+const getLoadedStatus = (state: State): string => state[NameSpace.Data].isLoaded;
 
 const getAdventuresQuests = createSelector(
   loadQuests,  (quests) => quests.filter((quest) => quest.type ===  Types.ADVENTURES.type));

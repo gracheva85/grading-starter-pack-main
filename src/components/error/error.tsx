@@ -1,7 +1,7 @@
-import { MainLayout, PageTitle, PageSubtext, Link } from 'components/common/common';
+import { MainLayout, PageTitle, PageSubtext, Link } from '../common/common';
 import * as S from './error.styled';
 
-const Error = () => {
+const Error = (): JSX.Element => {
   return (
   <MainLayout>
     <S.Main>

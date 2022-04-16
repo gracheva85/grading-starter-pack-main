@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { Container, Link as RouterLink } from 'components/common/common';
+import styled from 'styled-components';
+import { Container, Link as RouterLink } from '../../common/common';
 
 const StyledHeader = styled.header`
   z-index: 5;
@@ -74,12 +74,6 @@ const Link = styled(RouterLink)`
   text-transform: uppercase;
 
   color: ${({ theme }) => theme.color.whiteSmoke};
-
-  ${({ $isActiveLink }) =>
-    $isActiveLink &&
-    css`
-      color: ${({ theme }) => theme.color.tangerine};
-    `}
 
   &:focus,
   &:hover {

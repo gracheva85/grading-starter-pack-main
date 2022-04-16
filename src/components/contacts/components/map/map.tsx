@@ -4,7 +4,7 @@ import * as S from './map.styled';
 
 
 import {useEffect, useRef} from 'react';
-import iconLocation from 'assets/img/icon-location.png';
+import iconLocation from '../../../../assets/img/icon-location.png';
 
 const MAP_SIZE = 16;
 
@@ -18,12 +18,7 @@ const LEAFLET_DATA = {
   ATTRIBUTION: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 };
 
-const MarkerDetails = {
-  SIZE: [54, 68],
-  ANCOR: [24, 68],
-};
-
-const Map = () => {
+const Map = (): JSX.Element => {
   const mapRef = useRef(null);
 
   useEffect(() => {
@@ -43,8 +38,8 @@ const Map = () => {
 
     const pinIcon = L.icon({
       iconUrl: iconLocation,
-      iconSize: MarkerDetails.SIZE,
-      iconAnchor: MarkerDetails.ANCOR,
+      iconSize: [54, 68],
+      iconAnchor: [24, 68],
     })
 
     const pinMarker = L.marker(

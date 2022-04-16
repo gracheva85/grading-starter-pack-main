@@ -1,7 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {Menu, NameSpace, Types} from '../../consts';
+import { UserProcess } from '../../types/state';
 
-const initialState = {
+const initialState: UserProcess = {
   order: {},
   type: Types.ALL.type,
   currentMenu: Menu.QUESTS.route,

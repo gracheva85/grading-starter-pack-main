@@ -1,7 +1,7 @@
 import {
   MainLayout,
   PageHeading,
-} from 'components/common/common';
+} from '../common/common';
 import * as S from './stub-page.styled';
 
 const StubPage = () => {

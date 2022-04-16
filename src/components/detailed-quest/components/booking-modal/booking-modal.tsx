@@ -1,23 +1,37 @@
 import * as S from './booking-modal.styled';
-import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
+import { ReactComponent as IconClose } from '../../../../assets/img/icon-close.svg';
 import {store} from '../../../../store/index'
-import { postOrderAction } from 'store/api-actions';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { postOrderAction } from '../../../../store/api-actions';
+import { ChangeEvent, FormEvent, useCallback, useEffect, useRef, useState } from 'react';
 
-const BookingModal = ({onCloseBtnClick, peopleCount}) => {
+type BookingModalProps = {
+  onCloseBtnClick: (parametr: boolean) => void,
+  peopleCounts: number[],
+}
+
+const BookingModal = ({onCloseBtnClick, peopleCounts}: BookingModalProps): JSX.Element => {
   const ESC_KEY_CODE = "Escape";
 
-  const nameRef = useRef(null);
-  const phoneRef = useRef(null);
-  const peopleCountRef = useRef(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const phoneRef = useRef<HTMLInputElement>(null);
+  const peopleCountRef = useRef<HTMLInputElement>(null);
   const isLegalRef = useRef(null);
+
+  const [name, setName] = useState<string>('');
+  const [phone, setPhone] = useState<string>('');
+  const [people, setPeople] = useState<number>(0);
+
+  const handleNameInputChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    setName(evt.target.value);
+  };
 
   const [number, setNumber] = useState('');
 
-  const onPhoneChange = (evt) => {
+   const handlePhoneChange = (evt: ChangeEvent<HTMLInputElement>) => {
     if (!phoneRef.current) return;
     const onlyDigits = evt.target.value.replace(/\D/g, "");
     setNumber(onlyDigits);
+    setPhone(evt.target.value);
     if (!phoneRef.current.value.match(/^[0-9]{10}$/) ) {
       phoneRef.current.setCustomValidity('Телефон должен содержать 10 цифр');
     } else {
@@ -25,7 +39,11 @@ const BookingModal = ({onCloseBtnClick, peopleCount}) => {
     }
   }
 
-  const escFunction = useCallback((event) => {
+  const handlePeopleInputChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    setPeople(+evt.target.value);
+  };
+
+  const escFunction = useCallback((event: { key: string; }) => {
     if (event.key === ESC_KEY_CODE) {
       onCloseBtnClick(false);
     }
@@ -51,13 +69,13 @@ const BookingModal = ({onCloseBtnClick, peopleCount}) => {
         action="https://echo.htmlacademy.ru"
         method="post"
         id="booking-form"
-        onSubmit={(evt)=>{
+        onSubmit={(evt: FormEvent<HTMLFormElement>)=>{
             evt.preventDefault();
             store.dispatch(postOrderAction({
-              name: nameRef.current.value,
-              peopleCount: Number(peopleCountRef.current.value, 10),
-              phone: phoneRef.current.value,
-              isLegal: isLegalRef.current.checked,
+              name: name,
+              peopleCount: people,
+              phone: phone,
+              isLegal: true,
             }));
             onCloseBtnClick(false);
           }
@@ -71,6 +89,7 @@ const BookingModal = ({onCloseBtnClick, peopleCount}) => {
             name="booking-name"
             placeholder="Имя"
             ref={nameRef}
+            onChange={handleNameInputChange}
             required
           />
         </S.BookingField>
@@ -86,7 +105,7 @@ const BookingModal = ({onCloseBtnClick, peopleCount}) => {
             ref={phoneRef}
             max="10"
             value={number}
-            onChange={onPhoneChange}
+            onChange={handlePhoneChange}
             required
           />
         </S.BookingField>
@@ -100,8 +119,9 @@ const BookingModal = ({onCloseBtnClick, peopleCount}) => {
             name="booking-people"
             placeholder="Количество участников"
             ref={peopleCountRef}
-            min={peopleCount[0]}
-            max={peopleCount[1]}
+            min={peopleCounts[0]}
+            max={peopleCounts[1]}
+            onChange={handlePeopleInputChange}
             required
           />
         </S.BookingField>

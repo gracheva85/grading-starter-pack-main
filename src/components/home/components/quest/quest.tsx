@@ -1,12 +1,16 @@
 import * as S from './quests.styled';
 import {generatePath} from 'react-router-dom';
-import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
-import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
-import { translateLevel } from 'common';
-import { AppRoute } from 'consts';
+import { ReactComponent as IconPerson } from '../../../../assets/img/icon-person.svg';
+import { ReactComponent as IconPuzzle } from '../../../../assets/img/icon-puzzle.svg';
+import { translateLevel } from '../../../../common';
+import { AppRoute } from '../../../../consts';
+import { QuestType } from '../../../../types/quest-type';
 
-const Quest = (props) => {
-  const {quest} = props;
+type QuestProps = {
+  quest: QuestType;
+}
+
+const Quest = ({quest}: QuestProps): JSX.Element => {
 
   return (
     <S.QuestItem >

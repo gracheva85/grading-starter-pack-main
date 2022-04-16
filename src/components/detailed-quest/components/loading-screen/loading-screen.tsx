@@ -1,7 +1,7 @@
-import {PageTitle} from 'components/common/common';
+import {PageTitle} from '../../../common/common';
 import * as S from './loading-screen.styled';
 
-const LoadingScreen = () => {
+const LoadingScreen = (): JSX.Element => {
   return (
     <S.Main forwardedAs="main">
       <PageTitle>Loading...</PageTitle>

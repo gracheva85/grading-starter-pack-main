@@ -1,4 +1,4 @@
-import { Header, Footer } from 'components/common/common';
+import { Header, Footer } from '../../common/common';
 
 const MainLayout = ({ children }) => (
   <>
