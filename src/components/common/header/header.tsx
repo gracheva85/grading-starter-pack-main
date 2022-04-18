@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../../assets/img/logo.svg';
-import { Contact, Menu, Status } from '../../../consts';
+import { Contact, Menu } from '../../../consts';
 import * as S from './header.styled';
 import { v4 as uuidv4 } from 'uuid';
 import { useAppSelector } from '../../../hooks';
@@ -9,7 +9,6 @@ import { setMenu } from '../../../store/user-process/user-process';
 import {store} from '../../../store/index';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { setStatus } from '../../../store/quest-data/quest-data';
 import styled, { css } from 'styled-components';
 
 const ActiveLink = styled(S.Link)<{$isActiveLink: boolean}>`
@@ -26,7 +25,6 @@ const Header = (): JSX.Element => {
 
   const handleMenuClick = (route: string) => {
     store.dispatch(setMenu(route));
-    store.dispatch(setStatus(Status.Unknown));
   };
   const {pathname} = useLocation()
 
