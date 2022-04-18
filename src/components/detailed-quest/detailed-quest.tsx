@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MainLayout } from '../common/common';
+import { LoadingScreen, MainLayout } from '../common/common';
 import { ReactComponent as IconClock } from '../../assets/img/icon-clock.svg';
 import { ReactComponent as IconPerson } from '../../assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from '../../assets/img/icon-puzzle.svg';
@@ -13,7 +13,6 @@ import { useParams } from 'react-router-dom';
 import { fetchQuestAction } from '../../store/api-actions';
 import Error from '../error/error';
 import {store} from '../../store/index'
-import LoadingScreen from './components/loading-screen/loading-screen';
 
 const translateType = (type: string) => {
   switch (type) {

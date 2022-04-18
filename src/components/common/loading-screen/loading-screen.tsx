@@ -1,4 +1,4 @@
-import {PageTitle} from '../../../common/common';
+import {PageTitle} from '../common';
 import * as S from './loading-screen.styled';
 
 const LoadingScreen = (): JSX.Element => {

@@ -6,8 +6,9 @@ import {
   PageTitle,
   PageHeading,
   PageSubtext,
+  LoadingScreen,
 } from '../common/common';
-import { LoadingScreen } from '../detailed-quest/components/components';
+
 import { QuestsCatalog } from './components/components';
 import * as S from './home.styled';
 
