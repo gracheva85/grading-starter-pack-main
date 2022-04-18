@@ -14,6 +14,7 @@ const questData = createSlice({
   reducers: {
     getQuests: (state, action) => {
       state.quests = action.payload;
+      state.isLoaded = Status.Isloaded;
     },
     getQuest: (state, action) => {
       state.quest = action.payload;

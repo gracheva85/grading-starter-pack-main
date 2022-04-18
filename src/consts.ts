@@ -3,6 +3,12 @@ const enum NameSpace {
   User = 'User',
 };
 
+const enum Status {
+  Unknown = 'Unknown',
+  Isloaded = 'Isloaded',
+  IsNotloaded = 'IsNotloaded',
+}
+
 const AppRoute = {
   Root: '/',
   Quest: '/detailed-quest/:id',
@@ -93,12 +99,6 @@ const Contact = {
     text: 'info@escape-room.ru',
   },
 };
-
-const Status = {
-  Unknown: 'Unknown',
-  Isloaded: 'Isloaded',
-  IsNotloaded: 'IsNotloaded',
-}
 
 const defaultQuest = {
   id: 0,

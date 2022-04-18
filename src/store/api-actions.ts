@@ -45,6 +45,7 @@ const fetchQuestAction = createAsyncThunk<void, number, {
   ApiActionType.FetchQuest,
     async (id: number, {dispatch, extra: api}) => {
       try {
+        dispatch(setStatus(Status.Unknown));
         const {data} = await api.get<Quest>(`${APIRoute.Quests}/${id}`);
         dispatch(getQuest(data));
       } catch (error) {

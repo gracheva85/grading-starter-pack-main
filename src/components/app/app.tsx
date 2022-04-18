@@ -7,14 +7,13 @@ import {
 import DetailedQuest from '../detailed-quest/detailed-quest';
 import Contacts from '../contacts/contacts';
 import Home from '../home/home';
-
 import * as S from './app.styled';
 import Error from '../error/error';
-import { AppRoute } from '../../consts';
+import { AppRoute} from '../../consts';
 import { useEffect } from 'react';
 import { fetchQuestsAction } from '../../store/api-actions';
 import StubPage from '../stub-page/stub-page';
-import { useAppDispatch } from '../../hooks/index';
+import { useAppDispatch} from '../../hooks/index';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { appTheme } from './common';
