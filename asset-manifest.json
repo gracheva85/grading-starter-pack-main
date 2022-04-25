@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/grading-starter-pack-main/static/js/main.9f5c318c.chunk.js",
-    "main.js.map": "/grading-starter-pack-main/static/js/main.9f5c318c.chunk.js.map",
+    "main.js": "/grading-starter-pack-main/static/js/main.b45a9b22.chunk.js",
+    "main.js.map": "/grading-starter-pack-main/static/js/main.b45a9b22.chunk.js.map",
     "runtime-main.js": "/grading-starter-pack-main/static/js/runtime-main.c4e32e7b.js",
     "runtime-main.js.map": "/grading-starter-pack-main/static/js/runtime-main.c4e32e7b.js.map",
     "static/css/2.297cece4.chunk.css": "/grading-starter-pack-main/static/css/2.297cece4.chunk.css",
-    "static/js/2.cde49ba5.chunk.js": "/grading-starter-pack-main/static/js/2.cde49ba5.chunk.js",
-    "static/js/2.cde49ba5.chunk.js.map": "/grading-starter-pack-main/static/js/2.cde49ba5.chunk.js.map",
+    "static/js/2.96d2fbfa.chunk.js": "/grading-starter-pack-main/static/js/2.96d2fbfa.chunk.js",
+    "static/js/2.96d2fbfa.chunk.js.map": "/grading-starter-pack-main/static/js/2.96d2fbfa.chunk.js.map",
     "index.html": "/grading-starter-pack-main/index.html",
     "static/css/2.297cece4.chunk.css.map": "/grading-starter-pack-main/static/css/2.297cece4.chunk.css.map",
-    "static/js/2.cde49ba5.chunk.js.LICENSE.txt": "/grading-starter-pack-main/static/js/2.cde49ba5.chunk.js.LICENSE.txt",
+    "static/js/2.96d2fbfa.chunk.js.LICENSE.txt": "/grading-starter-pack-main/static/js/2.96d2fbfa.chunk.js.LICENSE.txt",
     "static/media/contacts-bg.3cccde2f.jpg": "/grading-starter-pack-main/static/media/contacts-bg.3cccde2f.jpg",
     "static/media/icon-adventures.9c0e5812.svg": "/grading-starter-pack-main/static/media/icon-adventures.9c0e5812.svg",
     "static/media/icon-all-quests.d0178c19.svg": "/grading-starter-pack-main/static/media/icon-all-quests.d0178c19.svg",
@@ -35,7 +35,7 @@
   "entrypoints": [
     "static/js/runtime-main.c4e32e7b.js",
     "static/css/2.297cece4.chunk.css",
-    "static/js/2.cde49ba5.chunk.js",
-    "static/js/main.9f5c318c.chunk.js"
+    "static/js/2.96d2fbfa.chunk.js",
+    "static/js/main.b45a9b22.chunk.js"
   ]
 }
