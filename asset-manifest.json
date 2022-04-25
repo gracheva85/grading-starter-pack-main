@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.js": "/grading-starter-pack-main/static/js/main.9f5c318c.chunk.js",
+    "main.js.map": "/grading-starter-pack-main/static/js/main.9f5c318c.chunk.js.map",
+    "runtime-main.js": "/grading-starter-pack-main/static/js/runtime-main.c4e32e7b.js",
+    "runtime-main.js.map": "/grading-starter-pack-main/static/js/runtime-main.c4e32e7b.js.map",
+    "static/css/2.297cece4.chunk.css": "/grading-starter-pack-main/static/css/2.297cece4.chunk.css",
+    "static/js/2.cde49ba5.chunk.js": "/grading-starter-pack-main/static/js/2.cde49ba5.chunk.js",
+    "static/js/2.cde49ba5.chunk.js.map": "/grading-starter-pack-main/static/js/2.cde49ba5.chunk.js.map",
+    "index.html": "/grading-starter-pack-main/index.html",
+    "static/css/2.297cece4.chunk.css.map": "/grading-starter-pack-main/static/css/2.297cece4.chunk.css.map",
+    "static/js/2.cde49ba5.chunk.js.LICENSE.txt": "/grading-starter-pack-main/static/js/2.cde49ba5.chunk.js.LICENSE.txt",
+    "static/media/contacts-bg.3cccde2f.jpg": "/grading-starter-pack-main/static/media/contacts-bg.3cccde2f.jpg",
+    "static/media/icon-adventures.9c0e5812.svg": "/grading-starter-pack-main/static/media/icon-adventures.9c0e5812.svg",
+    "static/media/icon-all-quests.d0178c19.svg": "/grading-starter-pack-main/static/media/icon-all-quests.d0178c19.svg",
+    "static/media/icon-clock.9e203b78.svg": "/grading-starter-pack-main/static/media/icon-clock.9e203b78.svg",
+    "static/media/icon-close.424bcac5.svg": "/grading-starter-pack-main/static/media/icon-close.424bcac5.svg",
+    "static/media/icon-detective.11929503.svg": "/grading-starter-pack-main/static/media/icon-detective.11929503.svg",
+    "static/media/icon-horrors.da41833d.svg": "/grading-starter-pack-main/static/media/icon-horrors.da41833d.svg",
+    "static/media/icon-instagram-hover.82c1524d.svg": "/grading-starter-pack-main/static/media/icon-instagram-hover.82c1524d.svg",
+    "static/media/icon-mystic.99b7056a.svg": "/grading-starter-pack-main/static/media/icon-mystic.99b7056a.svg",
+    "static/media/icon-person.b78163cb.svg": "/grading-starter-pack-main/static/media/icon-person.b78163cb.svg",
+    "static/media/icon-puzzle.cc0880f8.svg": "/grading-starter-pack-main/static/media/icon-puzzle.cc0880f8.svg",
+    "static/media/icon-scifi.b8950933.svg": "/grading-starter-pack-main/static/media/icon-scifi.b8950933.svg",
+    "static/media/icon-tick.e33f85c3.svg": "/grading-starter-pack-main/static/media/icon-tick.e33f85c3.svg",
+    "static/media/icon-vk-hover.41069e22.svg": "/grading-starter-pack-main/static/media/icon-vk-hover.41069e22.svg",
+    "static/media/logo.74c02aa7.svg": "/grading-starter-pack-main/static/media/logo.74c02aa7.svg",
+    "static/media/raleway-black.172ef2e7.woff2": "/grading-starter-pack-main/static/media/raleway-black.172ef2e7.woff2",
+    "static/media/raleway-bold.c8eceb37.woff2": "/grading-starter-pack-main/static/media/raleway-bold.c8eceb37.woff2",
+    "static/media/raleway-extrabold.880f907a.woff2": "/grading-starter-pack-main/static/media/raleway-extrabold.880f907a.woff2",
+    "static/media/raleway-medium.0c206b62.woff2": "/grading-starter-pack-main/static/media/raleway-medium.0c206b62.woff2",
+    "static/media/raleway-regular.32f1ff58.woff2": "/grading-starter-pack-main/static/media/raleway-regular.32f1ff58.woff2",
+    "static/media/raleway-semibold.e26f87cb.woff2": "/grading-starter-pack-main/static/media/raleway-semibold.e26f87cb.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c4e32e7b.js",
+    "static/css/2.297cece4.chunk.css",
+    "static/js/2.cde49ba5.chunk.js",
+    "static/js/main.9f5c318c.chunk.js"
+  ]
+}
