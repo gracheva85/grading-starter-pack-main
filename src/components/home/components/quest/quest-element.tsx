@@ -17,7 +17,7 @@ const QuestElement = ({quest}: QuestProps): JSX.Element => {
         <S.QuestItemLink to={generatePath(AppRoute.Quest, {id: String(quest.id)})}>
           <S.Quest>
             <S.QuestImage
-              src={quest.previewImg}
+              src={`/grading-starter-pack-main/${quest.previewImg}`}
               width="344"
               height="232"
               alt={quest.title}

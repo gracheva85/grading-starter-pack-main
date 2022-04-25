@@ -55,7 +55,7 @@ const DetailedQuest = (): JSX.Element => {
     <MainLayout>
       <S.Main>
         <S.PageImage
-          src={`../${quest.coverImg}`}
+          src={`/grading-starter-pack-main/${quest.coverImg}`}
           alt={quest.title}
           width="1366"
           height="768"
