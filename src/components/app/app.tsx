@@ -1,8 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import {
   Switch,
-  Route,
-  BrowserRouter as Router,
+  Route
 } from '../common/common';
 import DetailedQuest from '../detailed-quest/detailed-quest';
 import Contacts from '../contacts/contacts';
@@ -17,6 +16,7 @@ import { useAppDispatch} from '../../hooks/index';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { appTheme } from './common';
+import { HashRouter } from 'react-router-dom';
 
 const App = (): JSX.Element => {
   const dispatch = useAppDispatch()
@@ -29,7 +29,7 @@ const App = (): JSX.Element => {
   <ThemeProvider theme={appTheme}>
     <ToastContainer />
     <S.GlobalStyle />
-    <Router>
+    <HashRouter>
       <Switch>
         <Route exact path={AppRoute.Quest} >
           <DetailedQuest />
@@ -53,7 +53,7 @@ const App = (): JSX.Element => {
           <Error />
         </Route>
       </Switch>
-    </Router>
+    </HashRouter>
   </ThemeProvider>
 )}
 
